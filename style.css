@@ -6,8 +6,8 @@
     --bg-color: #081b29;
     --text-color: #fff;
 
-    --h1-font: 3rem;
-    --p-font: 1rem;
+    --h2-font: 2rem;
+    --p-font: 1.1rem;
 }
 
 /* General Reset */
@@ -33,6 +33,138 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 6%;
+    padding: 15px 8%;
     background: #081b29;
+    transition: all 0.50s ease;
+}
+
+.logo {
+    max-width: 350px;
+    width: 100%;
+    color: var(--text-color);
+    font-size: var(--h2-font);
+}
+
+.logo span {
+    color: #01ff01;
+}
+
+#checkbox {
+    display: none;
+}
+
+#menu_icon {
+    color: var(--text-color);
+    font-size: 30px;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
+
+.navlinks {
+    display: flex;
+}
+
+.navlinks li {
+    margin: 0 20px;
+}
+
+.navlinks a {
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    transition: all 0.50s ease;
+}
+
+.navlinks a.active,
+.navlinks a:hover {
+    color: #01ff01;
+    background-color: #183244;
+    border-radius: 10px;
+}
+
+/* Hero Section */
+.hero_section {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(images/pexels-pixabay-247599.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Start */
+@media screen and (max-width: 1800px) {
+    .navber {
+        padding: 12px 6%;
+    }
+}
+
+@media screen and (max-width: 1480px) {
+    .navber {
+        padding: 8px 4%;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    .navber {
+        padding: 12px 6%;
+    }
+
+    #menu_icon {
+        display: block;
+    }
+
+    .navlinks {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 50%;
+        height: 50vh;
+        flex-direction: column;
+        align-items: center;
+        backdrop-filter: blur(5px);
+        transition: all 0.50s ease;
+    }
+
+    .navlinks li {
+        padding: 10px 30px;
+        margin: 20px 0;
+    }
+
+    #checkbox:checked ~ .navlinks {
+        right: 0;
+    }
+
+    #checkbox:checked ~ #menu_icon i::before {
+        content: '\58';
+        font-size: 30px;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .navlinks a.active,
+    .navlinks a:hover {
+        color: #01ff01;
+        background: none;
+    }
 }
